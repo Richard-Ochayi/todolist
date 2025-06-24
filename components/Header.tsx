@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import LoadingIndicator from "./LoadingIndicator";
 import { Session } from "next-auth";
 import { VscSignOut } from "react-icons/vsc";
+import Image from "next/image";
 
 export default function Header({ session }: { session: Session }) {
     const { data: status } = useSession()
@@ -39,7 +40,7 @@ export default function Header({ session }: { session: Session }) {
                     <div className="absolute right-2 mt-2 w-40 bg-[#262626] rounded-md shadow-md p-2">
                         <div className="flex items-center flex-col gap-2">
                             {image ? (
-                                <img
+                                <Image
                                     src={session.user?.image || '/default-avatar.png'}
                                     alt=""
                                     className="w-7 h-7 rounded-full border"

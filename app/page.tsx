@@ -51,7 +51,7 @@ export default async function Home() {
         <div className="h-screen flex flex-col items-center w-full p-19">
           <Image className="p-3" alt="logo" src="/Clipboard.png" width={100} height={100} />
           <div className="text-white">
-            <p>You don't have any tasks registered yet.</p>
+            <p>You dont have any tasks registered yet.</p>
             <p>Create tasks and organize your to-do items.</p>
           </div>
         </div>
