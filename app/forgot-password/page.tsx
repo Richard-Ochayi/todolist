@@ -37,7 +37,7 @@ export default function ForgotPasswordPage(){
 
   
    return (
-     <div className="min-h-screen flex items-center justify-center px-4">
+     <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-[#0d1b2a] via-[#1b263b] to-[#0d1b2a]">
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-md px-8 pt-6 pb-8 w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-2 text-center">Forgot Password</h2>
         <h3 className='mb-7'>Include the email address associated with your account and we’ll send you an email with instructions to reset your password.</h3>
@@ -57,7 +57,7 @@ export default function ForgotPasswordPage(){
         <Button
           disabled={loading}
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer"
+          className="w-full text-white py-2 px-4 rounded hover cursor-pointer"
         >
           {loading ? 'Sending...' : "Send Reset Instructions"}
 

@@ -23,11 +23,13 @@ model PasswordResetToken {
   createdAt DateTime @default(now())
 }
 
-model VerificationToken {
-  id         String   @id @default(cuid())
-  token      String   @unique
-  identifier String   @unique
-  expires    DateTime
+model Otp {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  code         String
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
 }
 
 model User {

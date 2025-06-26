@@ -45,15 +45,15 @@ const LoginForm = () => {
         setLoading(true);
         const { email, password } = values
 
-        const res = await fetch(`/api/login-check${token ? `?token=${token}` : ""}`, {
+        const res = await fetch("/api/check-user", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password}),
         });
 
         const data = await res.json();
 
-        if (data.status === "exists" || data.status === "verified") {
+        if (data.exists) {
             const result = await Login(email, password);
             if (result.error) {
                 toast.error(result.message)
@@ -61,10 +61,15 @@ const LoginForm = () => {
                 toast.success(result.message);
                 router.push("/");
             }
-        } else if (data.status === "Verification_Sent") {
-            toast.success("Verification email sent! Check your inbox.");
         } else {
-            toast.error(data.message || "Something went wrong.");
+            await fetch("/api/send-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }), 
+            });
+
+            toast.success("OTP sent to your email.");
+            router.push(`/verify-otp?email=${encodeURIComponent(email)}`);
         }
         setLoading(false);
 

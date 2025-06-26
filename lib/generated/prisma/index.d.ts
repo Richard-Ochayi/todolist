@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type PasswordResetToken = $Result.DefaultSelection<Prisma.$PasswordResetTokenPayload>
 /**
- * Model VerificationToken
+ * Model Otp
  * 
  */
-export type VerificationToken = $Result.DefaultSelection<Prisma.$VerificationTokenPayload>
+export type Otp = $Result.DefaultSelection<Prisma.$OtpPayload>
 /**
  * Model User
  * 
@@ -170,14 +170,14 @@ export class PrismaClient<
   get passwordResetToken(): Prisma.PasswordResetTokenDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.verificationToken`: Exposes CRUD operations for the **VerificationToken** model.
+   * `prisma.otp`: Exposes CRUD operations for the **Otp** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more VerificationTokens
-    * const verificationTokens = await prisma.verificationToken.findMany()
+    * // Fetch zero or more Otps
+    * const otps = await prisma.otp.findMany()
     * ```
     */
-  get verificationToken(): Prisma.VerificationTokenDelegate<ExtArgs, ClientOptions>;
+  get otp(): Prisma.OtpDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.user`: Exposes CRUD operations for the **User** model.
@@ -256,8 +256,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.7.0
-   * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+   * Prisma Client JS version: 6.10.1
+   * Query Engine version: 9b628578b3b7cae625e8c927178f15a170e74a9c
    */
   export type PrismaVersion = {
     client: string
@@ -639,7 +639,7 @@ export namespace Prisma {
 
   export const ModelName: {
     PasswordResetToken: 'PasswordResetToken',
-    VerificationToken: 'VerificationToken',
+    Otp: 'Otp',
     User: 'User',
     Task: 'Task'
   };
@@ -660,7 +660,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "passwordResetToken" | "verificationToken" | "user" | "task"
+      modelProps: "passwordResetToken" | "otp" | "user" | "task"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -738,77 +738,77 @@ export namespace Prisma {
           }
         }
       }
-      VerificationToken: {
-        payload: Prisma.$VerificationTokenPayload<ExtArgs>
-        fields: Prisma.VerificationTokenFieldRefs
+      Otp: {
+        payload: Prisma.$OtpPayload<ExtArgs>
+        fields: Prisma.OtpFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.VerificationTokenFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload> | null
+            args: Prisma.OtpFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.VerificationTokenFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>
+            args: Prisma.OtpFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>
           }
           findFirst: {
-            args: Prisma.VerificationTokenFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload> | null
+            args: Prisma.OtpFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.VerificationTokenFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>
+            args: Prisma.OtpFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>
           }
           findMany: {
-            args: Prisma.VerificationTokenFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>[]
+            args: Prisma.OtpFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>[]
           }
           create: {
-            args: Prisma.VerificationTokenCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>
+            args: Prisma.OtpCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>
           }
           createMany: {
-            args: Prisma.VerificationTokenCreateManyArgs<ExtArgs>
+            args: Prisma.OtpCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.VerificationTokenCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>[]
+            args: Prisma.OtpCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>[]
           }
           delete: {
-            args: Prisma.VerificationTokenDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>
+            args: Prisma.OtpDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>
           }
           update: {
-            args: Prisma.VerificationTokenUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>
+            args: Prisma.OtpUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>
           }
           deleteMany: {
-            args: Prisma.VerificationTokenDeleteManyArgs<ExtArgs>
+            args: Prisma.OtpDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.VerificationTokenUpdateManyArgs<ExtArgs>
+            args: Prisma.OtpUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.VerificationTokenUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>[]
+            args: Prisma.OtpUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>[]
           }
           upsert: {
-            args: Prisma.VerificationTokenUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VerificationTokenPayload>
+            args: Prisma.OtpUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OtpPayload>
           }
           aggregate: {
-            args: Prisma.VerificationTokenAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateVerificationToken>
+            args: Prisma.OtpAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateOtp>
           }
           groupBy: {
-            args: Prisma.VerificationTokenGroupByArgs<ExtArgs>
-            result: $Utils.Optional<VerificationTokenGroupByOutputType>[]
+            args: Prisma.OtpGroupByArgs<ExtArgs>
+            result: $Utils.Optional<OtpGroupByOutputType>[]
           }
           count: {
-            args: Prisma.VerificationTokenCountArgs<ExtArgs>
-            result: $Utils.Optional<VerificationTokenCountAggregateOutputType> | number
+            args: Prisma.OtpCountArgs<ExtArgs>
+            result: $Utils.Optional<OtpCountAggregateOutputType> | number
           }
         }
       }
@@ -1045,7 +1045,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     passwordResetToken?: PasswordResetTokenOmit
-    verificationToken?: VerificationTokenOmit
+    otp?: OtpOmit
     user?: UserOmit
     task?: TaskOmit
   }
@@ -2240,324 +2240,348 @@ export namespace Prisma {
 
 
   /**
-   * Model VerificationToken
+   * Model Otp
    */
 
-  export type AggregateVerificationToken = {
-    _count: VerificationTokenCountAggregateOutputType | null
-    _min: VerificationTokenMinAggregateOutputType | null
-    _max: VerificationTokenMaxAggregateOutputType | null
+  export type AggregateOtp = {
+    _count: OtpCountAggregateOutputType | null
+    _min: OtpMinAggregateOutputType | null
+    _max: OtpMaxAggregateOutputType | null
   }
 
-  export type VerificationTokenMinAggregateOutputType = {
+  export type OtpMinAggregateOutputType = {
     id: string | null
-    token: string | null
-    identifier: string | null
-    expires: Date | null
+    email: string | null
+    passwordHash: string | null
+    code: string | null
+    expiresAt: Date | null
+    createdAt: Date | null
   }
 
-  export type VerificationTokenMaxAggregateOutputType = {
+  export type OtpMaxAggregateOutputType = {
     id: string | null
-    token: string | null
-    identifier: string | null
-    expires: Date | null
+    email: string | null
+    passwordHash: string | null
+    code: string | null
+    expiresAt: Date | null
+    createdAt: Date | null
   }
 
-  export type VerificationTokenCountAggregateOutputType = {
+  export type OtpCountAggregateOutputType = {
     id: number
-    token: number
-    identifier: number
-    expires: number
+    email: number
+    passwordHash: number
+    code: number
+    expiresAt: number
+    createdAt: number
     _all: number
   }
 
 
-  export type VerificationTokenMinAggregateInputType = {
+  export type OtpMinAggregateInputType = {
     id?: true
-    token?: true
-    identifier?: true
-    expires?: true
+    email?: true
+    passwordHash?: true
+    code?: true
+    expiresAt?: true
+    createdAt?: true
   }
 
-  export type VerificationTokenMaxAggregateInputType = {
+  export type OtpMaxAggregateInputType = {
     id?: true
-    token?: true
-    identifier?: true
-    expires?: true
+    email?: true
+    passwordHash?: true
+    code?: true
+    expiresAt?: true
+    createdAt?: true
   }
 
-  export type VerificationTokenCountAggregateInputType = {
+  export type OtpCountAggregateInputType = {
     id?: true
-    token?: true
-    identifier?: true
-    expires?: true
+    email?: true
+    passwordHash?: true
+    code?: true
+    expiresAt?: true
+    createdAt?: true
     _all?: true
   }
 
-  export type VerificationTokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which VerificationToken to aggregate.
+     * Filter which Otp to aggregate.
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of VerificationTokens to fetch.
+     * Determine the order of Otps to fetch.
      */
-    orderBy?: VerificationTokenOrderByWithRelationInput | VerificationTokenOrderByWithRelationInput[]
+    orderBy?: OtpOrderByWithRelationInput | OtpOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: VerificationTokenWhereUniqueInput
+    cursor?: OtpWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` VerificationTokens from the position of the cursor.
+     * Take `±n` Otps from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` VerificationTokens.
+     * Skip the first `n` Otps.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned VerificationTokens
+     * Count returned Otps
     **/
-    _count?: true | VerificationTokenCountAggregateInputType
+    _count?: true | OtpCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: VerificationTokenMinAggregateInputType
+    _min?: OtpMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: VerificationTokenMaxAggregateInputType
+    _max?: OtpMaxAggregateInputType
   }
 
-  export type GetVerificationTokenAggregateType<T extends VerificationTokenAggregateArgs> = {
-        [P in keyof T & keyof AggregateVerificationToken]: P extends '_count' | 'count'
+  export type GetOtpAggregateType<T extends OtpAggregateArgs> = {
+        [P in keyof T & keyof AggregateOtp]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateVerificationToken[P]>
-      : GetScalarType<T[P], AggregateVerificationToken[P]>
+        : GetScalarType<T[P], AggregateOtp[P]>
+      : GetScalarType<T[P], AggregateOtp[P]>
   }
 
 
 
 
-  export type VerificationTokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: VerificationTokenWhereInput
-    orderBy?: VerificationTokenOrderByWithAggregationInput | VerificationTokenOrderByWithAggregationInput[]
-    by: VerificationTokenScalarFieldEnum[] | VerificationTokenScalarFieldEnum
-    having?: VerificationTokenScalarWhereWithAggregatesInput
+  export type OtpGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OtpWhereInput
+    orderBy?: OtpOrderByWithAggregationInput | OtpOrderByWithAggregationInput[]
+    by: OtpScalarFieldEnum[] | OtpScalarFieldEnum
+    having?: OtpScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: VerificationTokenCountAggregateInputType | true
-    _min?: VerificationTokenMinAggregateInputType
-    _max?: VerificationTokenMaxAggregateInputType
+    _count?: OtpCountAggregateInputType | true
+    _min?: OtpMinAggregateInputType
+    _max?: OtpMaxAggregateInputType
   }
 
-  export type VerificationTokenGroupByOutputType = {
+  export type OtpGroupByOutputType = {
     id: string
-    token: string
-    identifier: string
-    expires: Date
-    _count: VerificationTokenCountAggregateOutputType | null
-    _min: VerificationTokenMinAggregateOutputType | null
-    _max: VerificationTokenMaxAggregateOutputType | null
+    email: string
+    passwordHash: string
+    code: string
+    expiresAt: Date
+    createdAt: Date
+    _count: OtpCountAggregateOutputType | null
+    _min: OtpMinAggregateOutputType | null
+    _max: OtpMaxAggregateOutputType | null
   }
 
-  type GetVerificationTokenGroupByPayload<T extends VerificationTokenGroupByArgs> = Prisma.PrismaPromise<
+  type GetOtpGroupByPayload<T extends OtpGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<VerificationTokenGroupByOutputType, T['by']> &
+      PickEnumerable<OtpGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof VerificationTokenGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof OtpGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], VerificationTokenGroupByOutputType[P]>
-            : GetScalarType<T[P], VerificationTokenGroupByOutputType[P]>
+              : GetScalarType<T[P], OtpGroupByOutputType[P]>
+            : GetScalarType<T[P], OtpGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type VerificationTokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OtpSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    token?: boolean
-    identifier?: boolean
-    expires?: boolean
-  }, ExtArgs["result"]["verificationToken"]>
+    email?: boolean
+    passwordHash?: boolean
+    code?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["otp"]>
 
-  export type VerificationTokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OtpSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    token?: boolean
-    identifier?: boolean
-    expires?: boolean
-  }, ExtArgs["result"]["verificationToken"]>
+    email?: boolean
+    passwordHash?: boolean
+    code?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["otp"]>
 
-  export type VerificationTokenSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OtpSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    token?: boolean
-    identifier?: boolean
-    expires?: boolean
-  }, ExtArgs["result"]["verificationToken"]>
+    email?: boolean
+    passwordHash?: boolean
+    code?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["otp"]>
 
-  export type VerificationTokenSelectScalar = {
+  export type OtpSelectScalar = {
     id?: boolean
-    token?: boolean
-    identifier?: boolean
-    expires?: boolean
+    email?: boolean
+    passwordHash?: boolean
+    code?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
   }
 
-  export type VerificationTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "token" | "identifier" | "expires", ExtArgs["result"]["verificationToken"]>
+  export type OtpOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "passwordHash" | "code" | "expiresAt" | "createdAt", ExtArgs["result"]["otp"]>
 
-  export type $VerificationTokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "VerificationToken"
+  export type $OtpPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Otp"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      token: string
-      identifier: string
-      expires: Date
-    }, ExtArgs["result"]["verificationToken"]>
+      email: string
+      passwordHash: string
+      code: string
+      expiresAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["otp"]>
     composites: {}
   }
 
-  type VerificationTokenGetPayload<S extends boolean | null | undefined | VerificationTokenDefaultArgs> = $Result.GetResult<Prisma.$VerificationTokenPayload, S>
+  type OtpGetPayload<S extends boolean | null | undefined | OtpDefaultArgs> = $Result.GetResult<Prisma.$OtpPayload, S>
 
-  type VerificationTokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<VerificationTokenFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: VerificationTokenCountAggregateInputType | true
+  type OtpCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<OtpFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: OtpCountAggregateInputType | true
     }
 
-  export interface VerificationTokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['VerificationToken'], meta: { name: 'VerificationToken' } }
+  export interface OtpDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Otp'], meta: { name: 'Otp' } }
     /**
-     * Find zero or one VerificationToken that matches the filter.
-     * @param {VerificationTokenFindUniqueArgs} args - Arguments to find a VerificationToken
+     * Find zero or one Otp that matches the filter.
+     * @param {OtpFindUniqueArgs} args - Arguments to find a Otp
      * @example
-     * // Get one VerificationToken
-     * const verificationToken = await prisma.verificationToken.findUnique({
+     * // Get one Otp
+     * const otp = await prisma.otp.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends VerificationTokenFindUniqueArgs>(args: SelectSubset<T, VerificationTokenFindUniqueArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends OtpFindUniqueArgs>(args: SelectSubset<T, OtpFindUniqueArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one VerificationToken that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Otp that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {VerificationTokenFindUniqueOrThrowArgs} args - Arguments to find a VerificationToken
+     * @param {OtpFindUniqueOrThrowArgs} args - Arguments to find a Otp
      * @example
-     * // Get one VerificationToken
-     * const verificationToken = await prisma.verificationToken.findUniqueOrThrow({
+     * // Get one Otp
+     * const otp = await prisma.otp.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends VerificationTokenFindUniqueOrThrowArgs>(args: SelectSubset<T, VerificationTokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends OtpFindUniqueOrThrowArgs>(args: SelectSubset<T, OtpFindUniqueOrThrowArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first VerificationToken that matches the filter.
+     * Find the first Otp that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenFindFirstArgs} args - Arguments to find a VerificationToken
+     * @param {OtpFindFirstArgs} args - Arguments to find a Otp
      * @example
-     * // Get one VerificationToken
-     * const verificationToken = await prisma.verificationToken.findFirst({
+     * // Get one Otp
+     * const otp = await prisma.otp.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends VerificationTokenFindFirstArgs>(args?: SelectSubset<T, VerificationTokenFindFirstArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends OtpFindFirstArgs>(args?: SelectSubset<T, OtpFindFirstArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first VerificationToken that matches the filter or
+     * Find the first Otp that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenFindFirstOrThrowArgs} args - Arguments to find a VerificationToken
+     * @param {OtpFindFirstOrThrowArgs} args - Arguments to find a Otp
      * @example
-     * // Get one VerificationToken
-     * const verificationToken = await prisma.verificationToken.findFirstOrThrow({
+     * // Get one Otp
+     * const otp = await prisma.otp.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends VerificationTokenFindFirstOrThrowArgs>(args?: SelectSubset<T, VerificationTokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends OtpFindFirstOrThrowArgs>(args?: SelectSubset<T, OtpFindFirstOrThrowArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more VerificationTokens that matches the filter.
+     * Find zero or more Otps that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {OtpFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all VerificationTokens
-     * const verificationTokens = await prisma.verificationToken.findMany()
+     * // Get all Otps
+     * const otps = await prisma.otp.findMany()
      * 
-     * // Get first 10 VerificationTokens
-     * const verificationTokens = await prisma.verificationToken.findMany({ take: 10 })
+     * // Get first 10 Otps
+     * const otps = await prisma.otp.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const verificationTokenWithIdOnly = await prisma.verificationToken.findMany({ select: { id: true } })
+     * const otpWithIdOnly = await prisma.otp.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends VerificationTokenFindManyArgs>(args?: SelectSubset<T, VerificationTokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends OtpFindManyArgs>(args?: SelectSubset<T, OtpFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a VerificationToken.
-     * @param {VerificationTokenCreateArgs} args - Arguments to create a VerificationToken.
+     * Create a Otp.
+     * @param {OtpCreateArgs} args - Arguments to create a Otp.
      * @example
-     * // Create one VerificationToken
-     * const VerificationToken = await prisma.verificationToken.create({
+     * // Create one Otp
+     * const Otp = await prisma.otp.create({
      *   data: {
-     *     // ... data to create a VerificationToken
+     *     // ... data to create a Otp
      *   }
      * })
      * 
      */
-    create<T extends VerificationTokenCreateArgs>(args: SelectSubset<T, VerificationTokenCreateArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends OtpCreateArgs>(args: SelectSubset<T, OtpCreateArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many VerificationTokens.
-     * @param {VerificationTokenCreateManyArgs} args - Arguments to create many VerificationTokens.
+     * Create many Otps.
+     * @param {OtpCreateManyArgs} args - Arguments to create many Otps.
      * @example
-     * // Create many VerificationTokens
-     * const verificationToken = await prisma.verificationToken.createMany({
+     * // Create many Otps
+     * const otp = await prisma.otp.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends VerificationTokenCreateManyArgs>(args?: SelectSubset<T, VerificationTokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends OtpCreateManyArgs>(args?: SelectSubset<T, OtpCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many VerificationTokens and returns the data saved in the database.
-     * @param {VerificationTokenCreateManyAndReturnArgs} args - Arguments to create many VerificationTokens.
+     * Create many Otps and returns the data saved in the database.
+     * @param {OtpCreateManyAndReturnArgs} args - Arguments to create many Otps.
      * @example
-     * // Create many VerificationTokens
-     * const verificationToken = await prisma.verificationToken.createManyAndReturn({
+     * // Create many Otps
+     * const otp = await prisma.otp.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many VerificationTokens and only return the `id`
-     * const verificationTokenWithIdOnly = await prisma.verificationToken.createManyAndReturn({
+     * // Create many Otps and only return the `id`
+     * const otpWithIdOnly = await prisma.otp.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2567,28 +2591,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends VerificationTokenCreateManyAndReturnArgs>(args?: SelectSubset<T, VerificationTokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends OtpCreateManyAndReturnArgs>(args?: SelectSubset<T, OtpCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a VerificationToken.
-     * @param {VerificationTokenDeleteArgs} args - Arguments to delete one VerificationToken.
+     * Delete a Otp.
+     * @param {OtpDeleteArgs} args - Arguments to delete one Otp.
      * @example
-     * // Delete one VerificationToken
-     * const VerificationToken = await prisma.verificationToken.delete({
+     * // Delete one Otp
+     * const Otp = await prisma.otp.delete({
      *   where: {
-     *     // ... filter to delete one VerificationToken
+     *     // ... filter to delete one Otp
      *   }
      * })
      * 
      */
-    delete<T extends VerificationTokenDeleteArgs>(args: SelectSubset<T, VerificationTokenDeleteArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends OtpDeleteArgs>(args: SelectSubset<T, OtpDeleteArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one VerificationToken.
-     * @param {VerificationTokenUpdateArgs} args - Arguments to update one VerificationToken.
+     * Update one Otp.
+     * @param {OtpUpdateArgs} args - Arguments to update one Otp.
      * @example
-     * // Update one VerificationToken
-     * const verificationToken = await prisma.verificationToken.update({
+     * // Update one Otp
+     * const otp = await prisma.otp.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2598,30 +2622,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends VerificationTokenUpdateArgs>(args: SelectSubset<T, VerificationTokenUpdateArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends OtpUpdateArgs>(args: SelectSubset<T, OtpUpdateArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more VerificationTokens.
-     * @param {VerificationTokenDeleteManyArgs} args - Arguments to filter VerificationTokens to delete.
+     * Delete zero or more Otps.
+     * @param {OtpDeleteManyArgs} args - Arguments to filter Otps to delete.
      * @example
-     * // Delete a few VerificationTokens
-     * const { count } = await prisma.verificationToken.deleteMany({
+     * // Delete a few Otps
+     * const { count } = await prisma.otp.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends VerificationTokenDeleteManyArgs>(args?: SelectSubset<T, VerificationTokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends OtpDeleteManyArgs>(args?: SelectSubset<T, OtpDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more VerificationTokens.
+     * Update zero or more Otps.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {OtpUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many VerificationTokens
-     * const verificationToken = await prisma.verificationToken.updateMany({
+     * // Update many Otps
+     * const otp = await prisma.otp.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2631,14 +2655,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends VerificationTokenUpdateManyArgs>(args: SelectSubset<T, VerificationTokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends OtpUpdateManyArgs>(args: SelectSubset<T, OtpUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more VerificationTokens and returns the data updated in the database.
-     * @param {VerificationTokenUpdateManyAndReturnArgs} args - Arguments to update many VerificationTokens.
+     * Update zero or more Otps and returns the data updated in the database.
+     * @param {OtpUpdateManyAndReturnArgs} args - Arguments to update many Otps.
      * @example
-     * // Update many VerificationTokens
-     * const verificationToken = await prisma.verificationToken.updateManyAndReturn({
+     * // Update many Otps
+     * const otp = await prisma.otp.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2647,8 +2671,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more VerificationTokens and only return the `id`
-     * const verificationTokenWithIdOnly = await prisma.verificationToken.updateManyAndReturn({
+     * // Update zero or more Otps and only return the `id`
+     * const otpWithIdOnly = await prisma.otp.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2661,56 +2685,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends VerificationTokenUpdateManyAndReturnArgs>(args: SelectSubset<T, VerificationTokenUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends OtpUpdateManyAndReturnArgs>(args: SelectSubset<T, OtpUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one VerificationToken.
-     * @param {VerificationTokenUpsertArgs} args - Arguments to update or create a VerificationToken.
+     * Create or update one Otp.
+     * @param {OtpUpsertArgs} args - Arguments to update or create a Otp.
      * @example
-     * // Update or create a VerificationToken
-     * const verificationToken = await prisma.verificationToken.upsert({
+     * // Update or create a Otp
+     * const otp = await prisma.otp.upsert({
      *   create: {
-     *     // ... data to create a VerificationToken
+     *     // ... data to create a Otp
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the VerificationToken we want to update
+     *     // ... the filter for the Otp we want to update
      *   }
      * })
      */
-    upsert<T extends VerificationTokenUpsertArgs>(args: SelectSubset<T, VerificationTokenUpsertArgs<ExtArgs>>): Prisma__VerificationTokenClient<$Result.GetResult<Prisma.$VerificationTokenPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends OtpUpsertArgs>(args: SelectSubset<T, OtpUpsertArgs<ExtArgs>>): Prisma__OtpClient<$Result.GetResult<Prisma.$OtpPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of VerificationTokens.
+     * Count the number of Otps.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenCountArgs} args - Arguments to filter VerificationTokens to count.
+     * @param {OtpCountArgs} args - Arguments to filter Otps to count.
      * @example
-     * // Count the number of VerificationTokens
-     * const count = await prisma.verificationToken.count({
+     * // Count the number of Otps
+     * const count = await prisma.otp.count({
      *   where: {
-     *     // ... the filter for the VerificationTokens we want to count
+     *     // ... the filter for the Otps we want to count
      *   }
      * })
     **/
-    count<T extends VerificationTokenCountArgs>(
-      args?: Subset<T, VerificationTokenCountArgs>,
+    count<T extends OtpCountArgs>(
+      args?: Subset<T, OtpCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], VerificationTokenCountAggregateOutputType>
+          : GetScalarType<T['select'], OtpCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a VerificationToken.
+     * Allows you to perform aggregations operations on a Otp.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {OtpAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2730,13 +2754,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends VerificationTokenAggregateArgs>(args: Subset<T, VerificationTokenAggregateArgs>): Prisma.PrismaPromise<GetVerificationTokenAggregateType<T>>
+    aggregate<T extends OtpAggregateArgs>(args: Subset<T, OtpAggregateArgs>): Prisma.PrismaPromise<GetOtpAggregateType<T>>
 
     /**
-     * Group by VerificationToken.
+     * Group by Otp.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerificationTokenGroupByArgs} args - Group by arguments.
+     * @param {OtpGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2751,14 +2775,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends VerificationTokenGroupByArgs,
+      T extends OtpGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: VerificationTokenGroupByArgs['orderBy'] }
-        : { orderBy?: VerificationTokenGroupByArgs['orderBy'] },
+        ? { orderBy: OtpGroupByArgs['orderBy'] }
+        : { orderBy?: OtpGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2807,20 +2831,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, VerificationTokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetVerificationTokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, OtpGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOtpGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the VerificationToken model
+   * Fields of the Otp model
    */
-  readonly fields: VerificationTokenFieldRefs;
+  readonly fields: OtpFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for VerificationToken.
+   * The delegate class that acts as a "Promise-like" for Otp.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__VerificationTokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__OtpClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2848,376 +2872,378 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the VerificationToken model
+   * Fields of the Otp model
    */
-  interface VerificationTokenFieldRefs {
-    readonly id: FieldRef<"VerificationToken", 'String'>
-    readonly token: FieldRef<"VerificationToken", 'String'>
-    readonly identifier: FieldRef<"VerificationToken", 'String'>
-    readonly expires: FieldRef<"VerificationToken", 'DateTime'>
+  interface OtpFieldRefs {
+    readonly id: FieldRef<"Otp", 'String'>
+    readonly email: FieldRef<"Otp", 'String'>
+    readonly passwordHash: FieldRef<"Otp", 'String'>
+    readonly code: FieldRef<"Otp", 'String'>
+    readonly expiresAt: FieldRef<"Otp", 'DateTime'>
+    readonly createdAt: FieldRef<"Otp", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * VerificationToken findUnique
+   * Otp findUnique
    */
-  export type VerificationTokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * Filter, which VerificationToken to fetch.
+     * Filter, which Otp to fetch.
      */
-    where: VerificationTokenWhereUniqueInput
+    where: OtpWhereUniqueInput
   }
 
   /**
-   * VerificationToken findUniqueOrThrow
+   * Otp findUniqueOrThrow
    */
-  export type VerificationTokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * Filter, which VerificationToken to fetch.
+     * Filter, which Otp to fetch.
      */
-    where: VerificationTokenWhereUniqueInput
+    where: OtpWhereUniqueInput
   }
 
   /**
-   * VerificationToken findFirst
+   * Otp findFirst
    */
-  export type VerificationTokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * Filter, which VerificationToken to fetch.
+     * Filter, which Otp to fetch.
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of VerificationTokens to fetch.
+     * Determine the order of Otps to fetch.
      */
-    orderBy?: VerificationTokenOrderByWithRelationInput | VerificationTokenOrderByWithRelationInput[]
+    orderBy?: OtpOrderByWithRelationInput | OtpOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for VerificationTokens.
+     * Sets the position for searching for Otps.
      */
-    cursor?: VerificationTokenWhereUniqueInput
+    cursor?: OtpWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` VerificationTokens from the position of the cursor.
+     * Take `±n` Otps from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` VerificationTokens.
+     * Skip the first `n` Otps.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of VerificationTokens.
+     * Filter by unique combinations of Otps.
      */
-    distinct?: VerificationTokenScalarFieldEnum | VerificationTokenScalarFieldEnum[]
+    distinct?: OtpScalarFieldEnum | OtpScalarFieldEnum[]
   }
 
   /**
-   * VerificationToken findFirstOrThrow
+   * Otp findFirstOrThrow
    */
-  export type VerificationTokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * Filter, which VerificationToken to fetch.
+     * Filter, which Otp to fetch.
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of VerificationTokens to fetch.
+     * Determine the order of Otps to fetch.
      */
-    orderBy?: VerificationTokenOrderByWithRelationInput | VerificationTokenOrderByWithRelationInput[]
+    orderBy?: OtpOrderByWithRelationInput | OtpOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for VerificationTokens.
+     * Sets the position for searching for Otps.
      */
-    cursor?: VerificationTokenWhereUniqueInput
+    cursor?: OtpWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` VerificationTokens from the position of the cursor.
+     * Take `±n` Otps from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` VerificationTokens.
+     * Skip the first `n` Otps.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of VerificationTokens.
+     * Filter by unique combinations of Otps.
      */
-    distinct?: VerificationTokenScalarFieldEnum | VerificationTokenScalarFieldEnum[]
+    distinct?: OtpScalarFieldEnum | OtpScalarFieldEnum[]
   }
 
   /**
-   * VerificationToken findMany
+   * Otp findMany
    */
-  export type VerificationTokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * Filter, which VerificationTokens to fetch.
+     * Filter, which Otps to fetch.
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of VerificationTokens to fetch.
+     * Determine the order of Otps to fetch.
      */
-    orderBy?: VerificationTokenOrderByWithRelationInput | VerificationTokenOrderByWithRelationInput[]
+    orderBy?: OtpOrderByWithRelationInput | OtpOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing VerificationTokens.
+     * Sets the position for listing Otps.
      */
-    cursor?: VerificationTokenWhereUniqueInput
+    cursor?: OtpWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` VerificationTokens from the position of the cursor.
+     * Take `±n` Otps from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` VerificationTokens.
+     * Skip the first `n` Otps.
      */
     skip?: number
-    distinct?: VerificationTokenScalarFieldEnum | VerificationTokenScalarFieldEnum[]
+    distinct?: OtpScalarFieldEnum | OtpScalarFieldEnum[]
   }
 
   /**
-   * VerificationToken create
+   * Otp create
    */
-  export type VerificationTokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * The data needed to create a VerificationToken.
+     * The data needed to create a Otp.
      */
-    data: XOR<VerificationTokenCreateInput, VerificationTokenUncheckedCreateInput>
+    data: XOR<OtpCreateInput, OtpUncheckedCreateInput>
   }
 
   /**
-   * VerificationToken createMany
+   * Otp createMany
    */
-  export type VerificationTokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many VerificationTokens.
+     * The data used to create many Otps.
      */
-    data: VerificationTokenCreateManyInput | VerificationTokenCreateManyInput[]
+    data: OtpCreateManyInput | OtpCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * VerificationToken createManyAndReturn
+   * Otp createManyAndReturn
    */
-  export type VerificationTokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelectCreateManyAndReturn<ExtArgs> | null
+    select?: OtpSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * The data used to create many VerificationTokens.
+     * The data used to create many Otps.
      */
-    data: VerificationTokenCreateManyInput | VerificationTokenCreateManyInput[]
+    data: OtpCreateManyInput | OtpCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * VerificationToken update
+   * Otp update
    */
-  export type VerificationTokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * The data needed to update a VerificationToken.
+     * The data needed to update a Otp.
      */
-    data: XOR<VerificationTokenUpdateInput, VerificationTokenUncheckedUpdateInput>
+    data: XOR<OtpUpdateInput, OtpUncheckedUpdateInput>
     /**
-     * Choose, which VerificationToken to update.
+     * Choose, which Otp to update.
      */
-    where: VerificationTokenWhereUniqueInput
+    where: OtpWhereUniqueInput
   }
 
   /**
-   * VerificationToken updateMany
+   * Otp updateMany
    */
-  export type VerificationTokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update VerificationTokens.
+     * The data used to update Otps.
      */
-    data: XOR<VerificationTokenUpdateManyMutationInput, VerificationTokenUncheckedUpdateManyInput>
+    data: XOR<OtpUpdateManyMutationInput, OtpUncheckedUpdateManyInput>
     /**
-     * Filter which VerificationTokens to update
+     * Filter which Otps to update
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
-     * Limit how many VerificationTokens to update.
+     * Limit how many Otps to update.
      */
     limit?: number
   }
 
   /**
-   * VerificationToken updateManyAndReturn
+   * Otp updateManyAndReturn
    */
-  export type VerificationTokenUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: OtpSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * The data used to update VerificationTokens.
+     * The data used to update Otps.
      */
-    data: XOR<VerificationTokenUpdateManyMutationInput, VerificationTokenUncheckedUpdateManyInput>
+    data: XOR<OtpUpdateManyMutationInput, OtpUncheckedUpdateManyInput>
     /**
-     * Filter which VerificationTokens to update
+     * Filter which Otps to update
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
-     * Limit how many VerificationTokens to update.
+     * Limit how many Otps to update.
      */
     limit?: number
   }
 
   /**
-   * VerificationToken upsert
+   * Otp upsert
    */
-  export type VerificationTokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * The filter to search for the VerificationToken to update in case it exists.
+     * The filter to search for the Otp to update in case it exists.
      */
-    where: VerificationTokenWhereUniqueInput
+    where: OtpWhereUniqueInput
     /**
-     * In case the VerificationToken found by the `where` argument doesn't exist, create a new VerificationToken with this data.
+     * In case the Otp found by the `where` argument doesn't exist, create a new Otp with this data.
      */
-    create: XOR<VerificationTokenCreateInput, VerificationTokenUncheckedCreateInput>
+    create: XOR<OtpCreateInput, OtpUncheckedCreateInput>
     /**
-     * In case the VerificationToken was found with the provided `where` argument, update it with this data.
+     * In case the Otp was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<VerificationTokenUpdateInput, VerificationTokenUncheckedUpdateInput>
+    update: XOR<OtpUpdateInput, OtpUncheckedUpdateInput>
   }
 
   /**
-   * VerificationToken delete
+   * Otp delete
    */
-  export type VerificationTokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
     /**
-     * Filter which VerificationToken to delete.
+     * Filter which Otp to delete.
      */
-    where: VerificationTokenWhereUniqueInput
+    where: OtpWhereUniqueInput
   }
 
   /**
-   * VerificationToken deleteMany
+   * Otp deleteMany
    */
-  export type VerificationTokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which VerificationTokens to delete
+     * Filter which Otps to delete
      */
-    where?: VerificationTokenWhereInput
+    where?: OtpWhereInput
     /**
-     * Limit how many VerificationTokens to delete.
+     * Limit how many Otps to delete.
      */
     limit?: number
   }
 
   /**
-   * VerificationToken without action
+   * Otp without action
    */
-  export type VerificationTokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OtpDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VerificationToken
+     * Select specific fields to fetch from the Otp
      */
-    select?: VerificationTokenSelect<ExtArgs> | null
+    select?: OtpSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the VerificationToken
+     * Omit specific fields from the Otp
      */
-    omit?: VerificationTokenOmit<ExtArgs> | null
+    omit?: OtpOmit<ExtArgs> | null
   }
 
 
@@ -5436,14 +5462,16 @@ export namespace Prisma {
   export type PasswordResetTokenScalarFieldEnum = (typeof PasswordResetTokenScalarFieldEnum)[keyof typeof PasswordResetTokenScalarFieldEnum]
 
 
-  export const VerificationTokenScalarFieldEnum: {
+  export const OtpScalarFieldEnum: {
     id: 'id',
-    token: 'token',
-    identifier: 'identifier',
-    expires: 'expires'
+    email: 'email',
+    passwordHash: 'passwordHash',
+    code: 'code',
+    expiresAt: 'expiresAt',
+    createdAt: 'createdAt'
   };
 
-  export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
+  export type OtpScalarFieldEnum = (typeof OtpScalarFieldEnum)[keyof typeof OtpScalarFieldEnum]
 
 
   export const UserScalarFieldEnum: {
@@ -5610,51 +5638,61 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"PasswordResetToken"> | Date | string
   }
 
-  export type VerificationTokenWhereInput = {
-    AND?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
-    OR?: VerificationTokenWhereInput[]
-    NOT?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
-    id?: StringFilter<"VerificationToken"> | string
-    token?: StringFilter<"VerificationToken"> | string
-    identifier?: StringFilter<"VerificationToken"> | string
-    expires?: DateTimeFilter<"VerificationToken"> | Date | string
+  export type OtpWhereInput = {
+    AND?: OtpWhereInput | OtpWhereInput[]
+    OR?: OtpWhereInput[]
+    NOT?: OtpWhereInput | OtpWhereInput[]
+    id?: StringFilter<"Otp"> | string
+    email?: StringFilter<"Otp"> | string
+    passwordHash?: StringFilter<"Otp"> | string
+    code?: StringFilter<"Otp"> | string
+    expiresAt?: DateTimeFilter<"Otp"> | Date | string
+    createdAt?: DateTimeFilter<"Otp"> | Date | string
   }
 
-  export type VerificationTokenOrderByWithRelationInput = {
+  export type OtpOrderByWithRelationInput = {
     id?: SortOrder
-    token?: SortOrder
-    identifier?: SortOrder
-    expires?: SortOrder
+    email?: SortOrder
+    passwordHash?: SortOrder
+    code?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type VerificationTokenWhereUniqueInput = Prisma.AtLeast<{
+  export type OtpWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    token?: string
-    identifier?: string
-    AND?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
-    OR?: VerificationTokenWhereInput[]
-    NOT?: VerificationTokenWhereInput | VerificationTokenWhereInput[]
-    expires?: DateTimeFilter<"VerificationToken"> | Date | string
-  }, "id" | "token" | "identifier">
+    email?: string
+    AND?: OtpWhereInput | OtpWhereInput[]
+    OR?: OtpWhereInput[]
+    NOT?: OtpWhereInput | OtpWhereInput[]
+    passwordHash?: StringFilter<"Otp"> | string
+    code?: StringFilter<"Otp"> | string
+    expiresAt?: DateTimeFilter<"Otp"> | Date | string
+    createdAt?: DateTimeFilter<"Otp"> | Date | string
+  }, "id" | "email">
 
-  export type VerificationTokenOrderByWithAggregationInput = {
+  export type OtpOrderByWithAggregationInput = {
     id?: SortOrder
-    token?: SortOrder
-    identifier?: SortOrder
-    expires?: SortOrder
-    _count?: VerificationTokenCountOrderByAggregateInput
-    _max?: VerificationTokenMaxOrderByAggregateInput
-    _min?: VerificationTokenMinOrderByAggregateInput
+    email?: SortOrder
+    passwordHash?: SortOrder
+    code?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: OtpCountOrderByAggregateInput
+    _max?: OtpMaxOrderByAggregateInput
+    _min?: OtpMinOrderByAggregateInput
   }
 
-  export type VerificationTokenScalarWhereWithAggregatesInput = {
-    AND?: VerificationTokenScalarWhereWithAggregatesInput | VerificationTokenScalarWhereWithAggregatesInput[]
-    OR?: VerificationTokenScalarWhereWithAggregatesInput[]
-    NOT?: VerificationTokenScalarWhereWithAggregatesInput | VerificationTokenScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"VerificationToken"> | string
-    token?: StringWithAggregatesFilter<"VerificationToken"> | string
-    identifier?: StringWithAggregatesFilter<"VerificationToken"> | string
-    expires?: DateTimeWithAggregatesFilter<"VerificationToken"> | Date | string
+  export type OtpScalarWhereWithAggregatesInput = {
+    AND?: OtpScalarWhereWithAggregatesInput | OtpScalarWhereWithAggregatesInput[]
+    OR?: OtpScalarWhereWithAggregatesInput[]
+    NOT?: OtpScalarWhereWithAggregatesInput | OtpScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Otp"> | string
+    email?: StringWithAggregatesFilter<"Otp"> | string
+    passwordHash?: StringWithAggregatesFilter<"Otp"> | string
+    code?: StringWithAggregatesFilter<"Otp"> | string
+    expiresAt?: DateTimeWithAggregatesFilter<"Otp"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Otp"> | Date | string
   }
 
   export type UserWhereInput = {
@@ -5827,53 +5865,67 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type VerificationTokenCreateInput = {
+  export type OtpCreateInput = {
     id?: string
-    token: string
-    identifier: string
-    expires: Date | string
+    email: string
+    passwordHash: string
+    code: string
+    expiresAt: Date | string
+    createdAt?: Date | string
   }
 
-  export type VerificationTokenUncheckedCreateInput = {
+  export type OtpUncheckedCreateInput = {
     id?: string
-    token: string
-    identifier: string
-    expires: Date | string
+    email: string
+    passwordHash: string
+    code: string
+    expiresAt: Date | string
+    createdAt?: Date | string
   }
 
-  export type VerificationTokenUpdateInput = {
+  export type OtpUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    identifier?: StringFieldUpdateOperationsInput | string
-    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
+    passwordHash?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type VerificationTokenUncheckedUpdateInput = {
+  export type OtpUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    identifier?: StringFieldUpdateOperationsInput | string
-    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
+    passwordHash?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type VerificationTokenCreateManyInput = {
+  export type OtpCreateManyInput = {
     id?: string
-    token: string
-    identifier: string
-    expires: Date | string
+    email: string
+    passwordHash: string
+    code: string
+    expiresAt: Date | string
+    createdAt?: Date | string
   }
 
-  export type VerificationTokenUpdateManyMutationInput = {
+  export type OtpUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    identifier?: StringFieldUpdateOperationsInput | string
-    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
+    passwordHash?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type VerificationTokenUncheckedUpdateManyInput = {
+  export type OtpUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    identifier?: StringFieldUpdateOperationsInput | string
-    expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
+    passwordHash?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserCreateInput = {
@@ -6079,25 +6131,31 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type VerificationTokenCountOrderByAggregateInput = {
+  export type OtpCountOrderByAggregateInput = {
     id?: SortOrder
-    token?: SortOrder
-    identifier?: SortOrder
-    expires?: SortOrder
+    email?: SortOrder
+    passwordHash?: SortOrder
+    code?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type VerificationTokenMaxOrderByAggregateInput = {
+  export type OtpMaxOrderByAggregateInput = {
     id?: SortOrder
-    token?: SortOrder
-    identifier?: SortOrder
-    expires?: SortOrder
+    email?: SortOrder
+    passwordHash?: SortOrder
+    code?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type VerificationTokenMinOrderByAggregateInput = {
+  export type OtpMinOrderByAggregateInput = {
     id?: SortOrder
-    token?: SortOrder
-    identifier?: SortOrder
-    expires?: SortOrder
+    email?: SortOrder
+    passwordHash?: SortOrder
+    code?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type TaskListRelationFilter = {
