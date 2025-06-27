@@ -46,7 +46,7 @@ export async function POST(req: Request) {
         });
 
         await resend.emails.send({
-            from: "noreply@richardtodoapp.online",
+            from: "noreply@richardtodoapp.site",
             to: email,
             subject: "Your OTP Code",
             html: `<p> Your OTP Code is: <strong>${otp}</strong>. It will expire in 10 minutes.</p>`,
