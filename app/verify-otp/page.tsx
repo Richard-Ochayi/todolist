@@ -35,7 +35,8 @@ export default function VerifyOtpPage() {
     };
 
     return (
-        <form onSubmit={handleVerify} className="p-6 bg-white rounded-md max-w-sm mx-auto mt-10 space-y-4">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d1b2a] via-[#1b263b] to-[#0d1b2a]">
+            <form onSubmit={handleVerify} className="p-6 bg-white rounded-md max-w-sm mx-auto mt-10 space-y-4">
       <h2 className="text-xl font-semibold text-center">Verify Your Email</h2>
       <Input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
       <Input type="text" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} required />
@@ -43,5 +44,6 @@ export default function VerifyOtpPage() {
         {loading ? "Verifying..." : "Verify"}
       </Button>
     </form>
+        </div>
     )
 }

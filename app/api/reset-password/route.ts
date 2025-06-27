@@ -1,5 +1,4 @@
 import prisma from "@/lib/db";
-import { HashPassword } from "@/lib/utils";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
@@ -18,7 +17,6 @@ export async function POST(req: Request) {
         });
 
         if (!record || record.expiresAt < new Date()) {
-            console.log("Token is invalid or expired")
             return NextResponse.json({ error: "Token is invalid or expired" })
         }
 
@@ -29,14 +27,10 @@ export async function POST(req: Request) {
             data: { passwordHash: hashedPassword },
         });
 
-        const updateUser = await prisma.user.findUnique({ where: { id:record.userId } });
-        console.log("Updated user passwordHash:", updateUser?.passwordHash);
-
 
         await prisma.passwordResetToken.delete({
             where: { token },
         });
-        console.log("Password reset complete, token deleted");
         
         return NextResponse.json({ succes: true });
     } catch (error) {

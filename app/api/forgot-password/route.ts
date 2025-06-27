@@ -29,7 +29,7 @@ export async function POST(req: Request) {
             }
         })
 
-        const  resetUrl = `http://localhost:3000/reset-password?token=${token}`;
+        const  resetUrl = `https://richardtodoapp.site/reset-password?token=${token}`;
 
         await resend.emails.send({ 
             from: "Todolist App <onboarding@resend.dev>",
