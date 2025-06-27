@@ -32,7 +32,7 @@ export default async function Home() {
   return (
     <div className="h-screen flex flex-col items-center bg-[#1A1A1A] relative">
       <div className="flex justify-center w-full bg-black p-15">
-        <Image className="" alt="logo" src="/logo.png" width={100} height={100} />
+        <Image className="" alt="logo" src="/Logo.png" width={100} height={100} />
       </div >
       <Header session={session} />
       <TaskListInput />
