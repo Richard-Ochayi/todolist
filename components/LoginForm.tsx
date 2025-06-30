@@ -53,7 +53,7 @@ const LoginForm = () => {
 
         const data = await res.json();
 
-        if (data.exists) {
+        if (res.ok && data.exists) {
             const result = await Login(email, password);
             if (result.error) {
                 toast.error(result.message)
@@ -61,16 +61,26 @@ const LoginForm = () => {
                 toast.success(result.message);
                 router.push("/");
             }
-        } else {
-            await fetch("/api/send-otp", {
+        } else if (res.status === 404) {
+           const otpRes = await fetch("/api/send-otp", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }), 
             });
 
-            toast.success("OTP sent to your email.");
-            router.push(`/verify-otp?email=${encodeURIComponent(email)}`);
-        }
+            const otpData = await otpRes.json();
+
+            if (otpRes.ok) {
+                toast.success("OTP sent to your email.");
+                router.push(`/verify-otp?email=${encodeURIComponent(email)}`);
+            } else {
+                toast.error(otpData.error || "Failed to send OTP");
+            } 
+        } else if (res.status === 401) {
+                toast.error(data.error || "Wrong password");
+            } else { 
+                toast.error("Something went wrong");
+            }
         setLoading(false);
 
 

@@ -16,12 +16,16 @@ export async function POST(req: Request) {
         });
 
         if (!user) {
-            return NextResponse.json({ exists: false });
+            return NextResponse.json({ error: "User not found" }, { status: 404});
         }
 
         const passwordMatch = await bcrypt.compare(password, user.passwordHash);
 
-        return NextResponse.json({ exists: passwordMatch});
+        if (!passwordMatch) {
+            return NextResponse.json({ error: "Wrong password" }, { status: 401 });
+        }
+
+        return NextResponse.json({ exists: true});
     } catch (error) {
         return NextResponse.json({ error: "Server error "}, { status: 500 });
     }
