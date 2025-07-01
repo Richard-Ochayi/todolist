@@ -25,7 +25,7 @@ const LoginForm = () => {
     const handleGoogleSignIn = async () => {
         setGoogleLoading(true);
         await signIn("google", {
-            callbackUrl: ("/"),
+            callbackUrl: ("https://richardtodoapp.site"),
         })
     }
     const schema = z.object({
