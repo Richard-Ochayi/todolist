@@ -114,11 +114,11 @@ const LoginForm = () => {
                 </div>
 
 
-                <Button type='submit' disabled={loading} className='mt-5 w-60'>
+                <Button type='submit' disabled={loading} className='mt-5 w-60 bg-[#334155] text-white hover:bg-[#1e293b]'>
                     {loading ? "Logging in..." : "Login"}
                 </Button>
                 <p className='flex items-center justify-center p-3 font-semibold'>OR</p>
-                <Button type='button' disabled={googleLoading} className='w-60' onClick={handleGoogleSignIn}>
+                <Button type='button' disabled={googleLoading} className='w-60 bg-[#334155] text-white hover:bg-[#1e293b]' onClick={handleGoogleSignIn}>
                     {googleLoading ? "Signing in..." : (
                         <div className='flex items-center gap-1'>
                             <FcGoogle />

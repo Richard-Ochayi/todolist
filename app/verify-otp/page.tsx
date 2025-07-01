@@ -40,7 +40,7 @@ export default function VerifyOtpPage() {
       <h2 className="text-xl font-semibold text-center">Verify Your Email</h2>
       <Input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
       <Input type="text" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} required />
-      <Button type="submit" disabled={loading} className="w-full">
+      <Button type="submit" disabled={loading} className="w-full bg-[#334155] text-white hover:bg-[#1e293b]">
         {loading ? "Verifying..." : "Verify"}
       </Button>
     </form>

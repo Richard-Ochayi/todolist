@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
                             onChange={(e) => setPassword(e.target.value)}
                             className="w-full p-2 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                        <Button type="submit" disabled={loading} className=" hover cursor-pointer">
+                        <Button type="submit" disabled={loading} className=" hover cursor-pointer bg-[#334155] text-white hover:bg-[#1e293b]">
                             {loading ? "Resetting..." : "Reset Password"}
                         </Button>
                         {message && <p>{message}</p>}
