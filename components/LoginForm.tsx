@@ -24,9 +24,7 @@ const LoginForm = () => {
 
     const handleGoogleSignIn = async () => {
         setGoogleLoading(true);
-        await signIn("google", {
-            callbackUrl: ("https://richardtodoapp.site"),
-        })
+        await signIn("google")
     }
     const schema = z.object({
         email: z.string().min(2, { message: "email too short" }).max(50, { message: "email too long" }).email({ message: "Invalid email address" }),
